@@ -75,13 +75,8 @@ namespace Samlingsklasser
         static void DiceSortedList()
         {
             //Övning 1
-
-        }
-
-        static void DiceDictionary()
-        {
-            //Skapa en dictionary med int som nyckel och int som värde
-            Dictionary<int, int> resultat = new Dictionary<int, int>();
+                        //Skapa en dictionary med int som nyckel och int som värde
+            SortedList<int, int> resultat = new SortedList<int, int>();
 
             //skapa ett Random objekt för att slumpa
             Random random = new Random();
@@ -105,6 +100,11 @@ namespace Samlingsklasser
             {
                 Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
             }
+        }
+
+        static void DiceDictionary()
+        {
+
 
         }
 
