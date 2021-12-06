@@ -19,6 +19,7 @@ namespace Samlingsklasser
             Console.WriteLine("5. Tärningskast med SortedList (Övning 1).");
             Console.WriteLine("6. Queue-exempel.");
             Console.WriteLine("7. Stack-exempel.");
+            Console.WriteLine("8. Övning2.");
 
             //Läs in menyval
             Console.Write("Ange siffra för vad du vill göra: ");
@@ -47,9 +48,42 @@ namespace Samlingsklasser
                 case "7":
                     StackExempel();
                     break;
+                case "8":
+                    Övning2();
+                    break;
+             
             }
 
             Console.ReadKey();
+        }
+
+        static void Övning2()
+        {
+            //Här skapar jag en lista som jag döpt till "övning2" som också har värdet double
+            List<double> övning2 = new List<double>(); 
+
+            //Här skapar jag en "for metod" som gör att programmet innanför ska upprepas om
+            for (int i = 0; i < 1000000000; i++)
+            {
+                //Den frågar användaren om värdet på talet som man ska mata in
+                Console.Write("Mata in ett tal:");  
+                //Här omvandlar koden svaret från användaren, string till double alltså
+                double tal = double.Parse(Console.ReadLine());
+                //Jag använder mig av if-sats eftersom de ska finnas ett vilkor ifall användare skriver in talet 0
+                if (tal == 0)
+                {
+                    //Den här koden här gör att programmet avslutas så for man matar in talet 0
+                    Environment.Exit(1);
+                }
+                //Sätter man in andra värden än 0 så ska programmet innanför else-sats fältet köras igång
+                else 
+                {
+                    //Den här raden låter talet som angetts av användaren läggas till i listan vi skapade
+                    övning2.Add(tal);
+                   // Den här raden skriver ut svaret från själva programmet. Programmet ska skriva ut genomsnittet av siffrorna i listan.
+                    Console.WriteLine("Medelvärde:" + övning2.Average());
+                }
+            }
         }
 
         static void DictionaryExempel()
@@ -100,12 +134,6 @@ namespace Samlingsklasser
             {
                 Console.WriteLine("Nyckel: {0} Värde: {1}", kvp.Key, kvp.Value);
             }
-        }
-
-        static void DiceDictionary()
-        {
-
-
         }
 
         static void QueueExempel()
